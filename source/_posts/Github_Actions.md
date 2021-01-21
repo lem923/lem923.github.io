@@ -1,10 +1,7 @@
-# Hexo五分钟部署Github Actions
 ---
-
 title: Hexo五分钟部署Github Action
 tag: [随笔]
 categories: [技术]
-
 ---
 Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？
 
