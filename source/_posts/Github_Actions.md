@@ -60,7 +60,7 @@ $ git push origin Hexo
 ## 第二步——建立Github Action
 **（1）**在自己Hexo相关Repo的主页（Codes），先将Branch（分支）调整到刚才上传的**Hexo**
 
-**（2）**查看该分支的**Package.json**文件，看其中**"Scripts"**项下是否包括**"build": "hexo generate"**
+**（2）**查看该分支的**Package.json**文件，看其中**scripts**项下是否包括"build": "hexo generate"
 
 **（3）**如果没有，按以下格式添加并保存：
 
