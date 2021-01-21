@@ -1,44 +1,33 @@
-# This is a basic workflow to help you get started with Actions
-name: Hexo Deploy                      
+name: Pages
 
-on: [push]                        # 监听到 push 事件后触发
+on:
+  push:
+    branches:
+      - gh-pages # default branch
 
 jobs:
-  build:
-
+  pages:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout              # 拉取当前执行 Actions 仓库的指定分支
-      uses: actions/checkout@v2
-      with:
-        ref: main
-
-    - name: Update Submodule      # 更新主题等
-      run: |
-        git submodule init
-        git submodule update --remote
-
-    - name: Setup Node            # 安装 Node 环境
-      uses: actions/setup-node@v2
-      
-    - name: Hexo Install
-      run: |
-        sudo npm install hexo-cli -g
-        sudo npm install
-
-    - name: Hexo Deploy
-      env:
-        SSH_PRIVATE: ${{ secrets.SSH_PRIVATE }}
-        GIT_NAME: lem923
-        GIT_EMAIL: ${{ secrets.EMAIL }}
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "$GIT_NAME"
-        git config --global user.email "$GIT_EMAIL"
-        hexo clean
-        hexo generate
-        hexo deploy
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: main  # deploying branch
