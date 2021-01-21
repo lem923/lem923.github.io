@@ -1,44 +1,56 @@
-# This is a basic workflow to help you get started with Actions
-name: Hexo Deploy                      
+name: Hexo Deploy
 
-on: [push]                        # 监听到 push 事件后触发
+on: 
+  push:
+    branches: 
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout              # 拉取当前执行 Actions 仓库的指定分支
+    - name: Checkout source
       uses: actions/checkout@v2
       with:
-        ref: main
-
-    - name: Update Submodule      # 更新主题等
+        path: main
+    - name: Checkout submodules
       run: |
-        git submodule init
-        git submodule update --remote
-
-    - name: Setup Node            # 安装 Node 环境
+        cd main
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+    - name: Setup node and yarn
       uses: actions/setup-node@v2
-      
-    - name: Hexo Install
+      with:
+        node-version: 12.x
+    - name: Install hexo dependencies
       run: |
-        sudo npm install hexo-cli -g
-        sudo npm install
-
-    - name: Hexo Deploy
+        cd main
+        yarn
+        npm i -g hexo-cli 
+    - name: Generate blog
       env:
-        SSH_PRIVATE: ${{ secrets.SSH_PRIVATE }}
-        GIT_NAME: lem923
-        GIT_EMAIL: ${{ secrets.EMAIL }}
+        TZ: Asia/Shanghai
       run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "$GIT_NAME"
-        git config --global user.email "$GIT_EMAIL"
+        cd main
         hexo clean
         hexo generate
-        hexo deploy
+        ls
+    - name: Checkout gh-pages
+      uses: actions/checkout@v2
+      with:
+        path: gh-pages-pre
+        ref: gh-pages
+        fetch-depth: 0
+    - name: Publish to gh-pages
+      env:
+        TZ: Asia/Shanghai
+      run: |
+        mv main/public gh-pages
+        cp -r gh-pages-pre/.git gh-pages/
+        cd gh-pages
+        git config --local user.email "{{ secret.EMAIL }}"
+        git config --local user.name "lem923"
+        git add .
+        git commit -m "Auto Delopy at `date +"%Y-%m-%d %H:%M"`"
+        git push origin gh-pages
