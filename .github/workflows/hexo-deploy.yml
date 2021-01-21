@@ -24,8 +24,8 @@ jobs:
       
     - name: Hexo Install
       run: |
-        npm install hexo-cli -g
-        npm install
+        sudo npm install hexo-cli -g
+        sudo npm install
 
     - name: Hexo Deploy
       env:
