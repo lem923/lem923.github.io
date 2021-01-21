@@ -6,7 +6,7 @@
   <link href="http://lem923.github.io/atom.xml" rel="self"/>
   
   <link href="http://lem923.github.io/"/>
-  <updated>2021-01-21T13:07:29.555Z</updated>
+  <updated>2021-01-21T13:48:22.753Z</updated>
   <id>http://lem923.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Hello World</title>
     <link href="http://lem923.github.io/2021/01/21/hello-world/"/>
     <id>http://lem923.github.io/2021/01/21/hello-world/</id>
-    <published>2021-01-21T13:07:29.555Z</published>
-    <updated>2021-01-21T13:07:29.555Z</updated>
+    <published>2021-01-21T13:48:22.753Z</published>
+    <updated>2021-01-21T13:48:22.753Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a><br>tez</p>]]></content>
     
@@ -32,6 +32,26 @@
     
     
     <category term="Hexo" scheme="http://lem923.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://lem923.github.io/2021/01/21/Github_Actions/"/>
+    <id>http://lem923.github.io/2021/01/21/Github_Actions/</id>
+    <published>2021-01-21T13:48:22.753Z</published>
+    <updated>2021-01-21T13:48:22.753Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo五分钟部署Github-Actions"><a href="#Hexo五分钟部署Github-Actions" class="headerlink" title="Hexo五分钟部署Github Actions"></a>Hexo五分钟部署Github Actions</h1><hr><p>title: Hexo五分钟部署Github Action<br>tag: [随笔]<br>categories: [技术]</p><hr><p>Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？</p><a id="more"></a><p>网络上其实有不少Github Actions自动部署Hexo的教程，但往往需要配置ssh密钥，以及自己修改一些内容，对于更广泛的受众、尤其是零基础的受众来说多少有些令人望而却步。事实上，Hexo自己就提供了<a href="https://hexo.io/docs/github-pages.html">一套简单易行的方案</a>，可以通过Github Action自动部署网站。</p><p>这一网页有提供<a href="https://hexo.io/zh-cn/docs/github-pages">中文版</a>，但可惜的是，中文版长期没有更新，仍在使用过去的Travis CI，不如Github Action简易。因此，本文将结合Hexo最新的教程，一步步介绍如何更简单第部署Github Action。</p><p>注：本文默认已安装Hexo并已通过Github Pages发布；否则，你可能并不需要Github Action。基于这一前提，现在你的电脑应已设置好git和git ssh所需密钥，下文将不再赘述。</p><h2 id="第一步（针对部分人的前期准备）——将Hexo上传至user-github-io的非main分支"><a href="#第一步（针对部分人的前期准备）——将Hexo上传至user-github-io的非main分支" class="headerlink" title="第一步（针对部分人的前期准备）——将Hexo上传至user.github.io的非main分支"></a>第一步（针对部分人的前期准备）——将Hexo上传至user.github.io的非main分支</h2><p>这一步只针对使用user.github.io作为Hexo博客repo的人群。由于Github的限制，使用这一域名的网站，内容必须储存在Main分支；同时，Hexo和网站内容（最好）不要放在同一个分支，因此，需要将Hexo上传至新的分支。</p><p>也就是说——</p><ul><li>如果你使用普通repo创建网站，网站放置于gh-pages分支，可忽略该步；</li><li>如果你已经将Hexo全部上传至user.github.io的main分支，可以选择清空main分支或仅保留public/下的内容；</li><li>如果你只采用deploy方式将博客发布至user.github.io的main分支，可直接进行下述操作。</li></ul><ol><li>将Hexo主目录下的public/文件夹移动至外部文件夹储存</li><li>打开终端，通过cd命令移动到Hexo主目录</li><li>输入([username][repo name]需要根据自己情况替换，不保留中括号)：</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@github.com:[username]&#x2F;[username].github.io.git</span><br><span class="line"># 或</span><br><span class="line">$ git remote add origin git@github.com:[username]&#x2F;[repo name]</span><br></pre></td></tr></table></figure><ol start="4"><li>继续输入：</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;a&quot;</span><br><span class="line">$ git push -u origin Hexo</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;Hexo五分钟部署Github-Actions&quot;&gt;&lt;a href=&quot;#Hexo五分钟部署Github-Actions&quot; class=&quot;headerlink&quot; title=&quot;Hexo五分钟部署Github Actions&quot;&gt;&lt;/a&gt;Hexo五分钟部署Github Actions&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;title: Hexo五分钟部署Github Action&lt;br&gt;tag: [随笔]&lt;br&gt;categories: [技术]&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？&lt;/p&gt;</summary>
+    
+    
+    
     
   </entry>
   
