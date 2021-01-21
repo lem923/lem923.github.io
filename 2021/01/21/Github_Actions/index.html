@@ -24,17 +24,17 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"lem923.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="Hexo五分钟部署Github Actions title: Hexo五分钟部署Github Actiontag: [随笔]categories: [技术]  Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文">
+<meta name="description" content="Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="时隙茶馆">
+<meta property="og:title" content="Hexo五分钟部署Github Action">
 <meta property="og:url" content="http://lem923.github.io/2021/01/21/Github_Actions/index.html">
 <meta property="og:site_name" content="时隙茶馆">
-<meta property="og:description" content="Hexo五分钟部署Github Actions title: Hexo五分钟部署Github Actiontag: [随笔]categories: [技术]  Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文">
+<meta property="og:description" content="Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-21T14:26:58.147Z">
-<meta property="article:modified_time" content="2021-01-21T14:26:58.147Z">
+<meta property="article:published_time" content="2021-01-21T14:32:24.420Z">
+<meta property="article:modified_time" content="2021-01-21T14:32:24.420Z">
 <meta property="article:author" content="Lem He">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
 
 
@@ -50,7 +50,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<title> | 时隙茶馆</title>
+<title>Hexo五分钟部署Github Action | 时隙茶馆</title>
   
 
 
@@ -163,7 +163,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo%E4%BA%94%E5%88%86%E9%92%9F%E9%83%A8%E7%BD%B2Github-Actions"><span class="nav-number">1.</span> <span class="nav-text">Hexo五分钟部署Github Actions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%88%E9%92%88%E5%AF%B9%E9%83%A8%E5%88%86%E4%BA%BA%E7%9A%84%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3user-github-io%E7%9A%84%E9%9D%9Emain%E5%88%86%E6%94%AF"><span class="nav-number">1.1.</span> <span class="nav-text">第一步（针对部分人的前期准备）——将Hexo上传至user.github.io的非main分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8BGithub-Action"><span class="nav-number">1.2.</span> <span class="nav-text">第二步——建立Github Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E2%80%94%E2%80%94%E6%A3%80%E9%AA%8C%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2"><span class="nav-number">1.3.</span> <span class="nav-text">第三步——检验是否成功实现自动部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">1.4.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%88%E9%92%88%E5%AF%B9%E9%83%A8%E5%88%86%E4%BA%BA%E7%9A%84%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%EF%BC%89%E2%80%94%E2%80%94%E5%B0%86Hexo%E4%B8%8A%E4%BC%A0%E8%87%B3user-github-io%E7%9A%84%E9%9D%9Emain%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">第一步（针对部分人的前期准备）——将Hexo上传至user.github.io的非main分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E2%80%94%E2%80%94%E5%BB%BA%E7%AB%8BGithub-Action"><span class="nav-number">2.</span> <span class="nav-text">第二步——建立Github Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E2%80%94%E2%80%94%E6%A3%80%E9%AA%8C%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2"><span class="nav-number">3.</span> <span class="nav-text">第三步——检验是否成功实现自动部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +184,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -242,7 +242,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Hexo五分钟部署Github Action
         </h1>
 
         <div class="post-meta-container">
@@ -253,7 +253,16 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-01-21 22:26:58" itemprop="dateCreated datePublished" datetime="2021-01-21T22:26:58+08:00">2021-01-21</time>
+      <time title="创建时间：2021-01-21 22:32:24" itemprop="dateCreated datePublished" datetime="2021-01-21T22:32:24+08:00">2021-01-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
     </span>
 
   
@@ -273,10 +282,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Hexo五分钟部署Github-Actions"><a href="#Hexo五分钟部署Github-Actions" class="headerlink" title="Hexo五分钟部署Github Actions"></a>Hexo五分钟部署Github Actions</h1><hr>
-<p>title: Hexo五分钟部署Github Action<br>tag: [随笔]<br>categories: [技术]</p>
-<hr>
-<p>Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？</p>
+        <p>Github Action是Github提供的一种自动化服务，可以在触发一定条件时，自动执行此前设计好的脚本，从而自动完成一些重复性工作，最大程度地节省人力。就Hexo而言，如果只需要将写好的文章放进Github Repo的Sources文件夹，后面的一系列Hexo clean, Hexo generate, Hexo deploy操作都不再需要自己手动完成，是不是很香呢？</p>
 <a id="more"></a>
 
 <p>网络上其实有不少Github Actions自动部署Hexo的教程，但往往需要配置ssh密钥，以及自己修改一些内容，对于更广泛的受众、尤其是零基础的受众来说多少有些令人望而却步。事实上，Hexo自己就提供了<a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages.html">一套简单易行的方案</a>，可以通过Github Action自动部署网站。</p>
@@ -327,7 +333,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://lem923.github.io/2021/01/21/Github_Actions/" title="">http://lem923.github.io/2021/01/21/Github_Actions/</a>
+      <a href="http://lem923.github.io/2021/01/21/Github_Actions/" title="Hexo五分钟部署Github Action">http://lem923.github.io/2021/01/21/Github_Actions/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -335,6 +341,9 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+          </div>
 
         
 
