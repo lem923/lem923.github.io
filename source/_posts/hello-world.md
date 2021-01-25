@@ -2,9 +2,11 @@
 
 title: Hello World
 
-date: 1/20/2021
+date: 2021/1/20
 
-tag: Hexo
+updated: 2021/1/20
+
+tags: Hexo
 
 Categories: 其他
 
