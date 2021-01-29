@@ -45,5 +45,6 @@ jobs:
           git checkout main
           git checkout Hexo -- CNAME
           git add CNAME
-          git commit -m "copy CNAME"         
+          git commit -m "copy CNAME"
+          git push origin main         
                      
