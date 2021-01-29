@@ -40,6 +40,8 @@ jobs:
           git config --global user.name "lem923"
           git config --global user.email "${{ secrets.EMAIL }}"
           git fetch
+          git add .
+          git commit -m "a"
           git checkout main
           git checkout Hexo -- CNAME
           git add CNAME
