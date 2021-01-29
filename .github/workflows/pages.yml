@@ -33,6 +33,12 @@ jobs:
           publish_branch: main  # deploying branch
       - name: Checkout
         run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE }}" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "lem923"
+          git config --global user.email "${{ secrets.EMAIL }}"
           git checkout Hexo -- CNAME
           git add CNAME
           git commit -m "copy CNAME"         
