@@ -33,7 +33,6 @@ jobs:
           publish_branch: main  # deploying branch
       - name: Checkout
         run: |
-          git checkout main
           git checkout Hexo -- CNAME
           git add CNAME
           git commit -m "copy CNAME"         
