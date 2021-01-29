@@ -39,6 +39,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "lem923"
           git config --global user.email "${{ secrets.EMAIL }}"
+          git checkout main
           git checkout Hexo -- CNAME
           git add CNAME
           git commit -m "copy CNAME"         
