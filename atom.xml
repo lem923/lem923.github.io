@@ -6,7 +6,7 @@
   <link href="http://lem923.github.io/atom.xml" rel="self"/>
   
   <link href="http://lem923.github.io/"/>
-  <updated>2021-01-25T16:00:00.000Z</updated>
+  <updated>2021-01-28T16:00:00.000Z</updated>
   <id>http://lem923.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://lem923.github.io/2021/01/28/Mweb%20and%20Typora/"/>
+    <id>http://lem923.github.io/2021/01/28/Mweb%20and%20Typora/</id>
+    <published>2021-01-28T16:00:00.000Z</published>
+    <updated>2021-01-28T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Typora与MWeb之间兜兜转转，字体、渲染、源代码还是所见即所得……最后，还是回到了Typora，一方面固然是字体的原因，另一方面也是因为所谓博客上传最终被证明为伪需求——我最后选用了Github Pages+Hexo，算是彻底放弃Word Press了。如此一来，Typora的外部文件夹模式就已足够。</p><p>字体对我来说是一个很难解的问题。我的使用场景有以下前提：</p><ul><li>不想使用系统自带的苹方、宋体、楷体等字体</li><li>又想使用中文字体（「XX就是脚勤」说的就是我了）</li></ul><p>在此基础上，如果从外部复制英文内容到MWeb，结果就是所有英文下引号（半角）都会变成中文下引号（全角），最典型的就是That’s变成了「That’  s」。当然，这其实并不影响输出，只是影响我自己的观感——但对于很多自己会不断修正和阅读的笔记来说，终究有点儿别（jiao）扭（qing）。与MWeb相比，Typora下则可以通过在font-family中先选用英文字体、后选用中文字体来规避这一问题。</p><p>这种左右横跳的做法也让我明白一件事：我可能是颜党，也可能是原教旨主义者，但最终还是个颜党……真是败给了自己。</p><p>其实回归Typora还有一个理由——MWeb的数据库其实也挺好用，但这几天手机上的iCloud同步不知道出了什么问题，动不动就是「等待上传」，重启之后才会真的开始同步文件，这就使得手机与电脑之间的文件同步很成问题；暂时只能借助外部模式来解决。网络上也并没什么有效的解决方案，无论是「退出iCloud重新登录」，还是「在iCloud设置中关闭再开启iCloud Drive」，甚至「删除Files App再重新下载」，都无法真正解决问题——只有重启可以，但总不能想同步先重启？</p><p>目前来说，就只有「重置手机」我还没有尝试过——这种还原与重置恐怕还得是不能从备份中恢复那种（不然各项设置岂不是又复原了），因此我也只能等到确有必要完成这种重置时再说，毕竟又不是不能曲线救国（用其他的云服务），相比之下重新下载所有App再重新登录才真是累人。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在Typora与MWeb之间兜兜转转，字体、渲染、源代码还是所见即所得……最后，还是回到了Typora，一方面固然是字体的原因，另一方面也是因为所谓博客上传最终被证明为伪需求——我最后选用了Github Pages+Hexo，算是彻底放弃Word Press了。如此一来，T</summary>
+      
+    
+    
+    
+    
+    <category term="随笔" scheme="http://lem923.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>油田租赁中的法律英语</title>
