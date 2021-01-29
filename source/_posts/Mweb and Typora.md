@@ -1,5 +1,5 @@
 ---
-Title: 脚勤的我在MWeb和Typora之间反复横跳
+title: 脚勤的我在MWeb和Typora之间反复横跳
 
 date: 2021/1/29
 
