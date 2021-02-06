@@ -8,7 +8,7 @@ updated: 2021/1/20
 
 tags: Hexo
 
-Categories: 其他
+categories: 其他
 
 ---
 

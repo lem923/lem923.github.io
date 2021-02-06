@@ -2,13 +2,13 @@
 
 title: Hexo五分钟部署Github Action
 
-tags: [随笔]
+tags: 技术
 
 date: 2021/1/23
 
 updated: 2021/1/25
 
-categories: [技术]
+categories: 随笔
 
 ---
 
