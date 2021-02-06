@@ -30,8 +30,10 @@
     
     
     
+    <category term="随笔" scheme="http://lem923.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="随笔" scheme="http://lem923.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+    <category term="工具" scheme="http://lem923.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -70,10 +72,10 @@
     
     
     
-    <category term="技术" scheme="http://lem923.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="随笔" scheme="http://lem923.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="随笔" scheme="http://lem923.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="技术" scheme="http://lem923.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
@@ -91,10 +93,10 @@
     
     
     
-    <category term="其他" scheme="http://lem923.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="随笔" scheme="http://lem923.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="随笔" scheme="http://lem923.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="Hexo" scheme="http://lem923.github.io/tags/Hexo/"/>
     
   </entry>
   
@@ -111,6 +113,8 @@
     <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</summary>
     
     
+    
+    <category term="其他" scheme="http://lem923.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
     <category term="Hexo" scheme="http://lem923.github.io/tags/Hexo/"/>
