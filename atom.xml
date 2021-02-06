@@ -6,7 +6,7 @@
   <link href="http://lem923.github.io/atom.xml" rel="self"/>
   
   <link href="http://lem923.github.io/"/>
-  <updated>2021-01-28T16:00:00.000Z</updated>
+  <updated>2021-02-05T16:00:00.000Z</updated>
   <id>http://lem923.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACG「漫画」一词的由来</title>
+    <link href="http://lem923.github.io/2021/02/05/Origin%20of%20Manga/"/>
+    <id>http://lem923.github.io/2021/02/05/Origin%20of%20Manga/</id>
+    <published>2021-02-05T16:00:00.000Z</published>
+    <updated>2021-02-05T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>偶然看到有人问，漫画为什么叫「漫」画？这真是我习以为常、从没想过的问题。也对，为什么取这个字呢？</p><a id="more"></a><p>在确定「漫画」的来源时，仍需要首先明确的是，此处所说的漫画是动漫的漫画，而不是传统意义上带有讽刺意味的漫画——汉语词典释义：一种具有强烈的讽刺性或幽默感的绘画。常采用夸张、变形、比喻、象征等手法，讽刺、批评或歌颂某些人和事，具有较强的社会性。也有纯为娱乐的作品。</p><p>事实上，如果看词典，更加古典（暴露年龄）的「连环画」才与动漫的「漫画」含义相同：按故事情节连续排列的许多幅画。一般每幅画都有文字说明。</p><p>回归「漫画」这个用法，如果单看「漫」字，字典有4种解释：</p><ol><li>水过满，四外流出，漾出来</li><li>淹没</li><li>满，遍，到处都是</li><li>没有限制，没有约束，随意</li></ol><p>结合漫画的形式和体裁，第4种释义「没有限制、没有约束、随意」似乎颇为相近。那么，是谁发明了动漫中「漫画」的说法？</p><p>经过检索，可以发现「漫画」其实是个外来语，来源于日本。日本早就有「漫画」这个词，而随着时代发展，现代意义上的「漫画」（Manga）=Comics。</p><p>如果更进一步追溯，最早使用这个词的人是江户时代的著名浮世绘画家山东京传和葛饰北斋。对于葛饰北斋这个人，初听或许只是耳熟，但这幅《神奈川冲浪里》想必很多人都有印象：</p><p><img src="https://i.imgur.com/M2sU2Uj.jpg" alt="Tsunami by hokusai 19th century.jpg"></p><p>没错，葛饰北斋就是这幅画的作者。他于1814年出版了《北斋漫画》。而在他之前，1798年，山东京传在绘本《四时交加》的序文第一次提到「漫画」这个词，称其为「绘画随笔」。</p><p>此外，有美国ACG爱好者的溯源文章则提到，「漫」的意思是”in spite of oneself”（不由自主的）、”lax”（随意的）、”whimsical”（异想天开的）。这样一看，「漫画」的「漫」字含义正合汉语字典的第四个释义，多少算得上出口转内销了？</p><p>以上就是ACG「漫画」一词的由来。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;偶然看到有人问，漫画为什么叫「漫」画？这真是我习以为常、从没想过的问题。也对，为什么取这个字呢？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://lem923.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="冷知识" scheme="http://lem923.github.io/tags/%E5%86%B7%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>脚勤的我在MWeb和Typora之间反复横跳</title>
