@@ -1,0 +1,7 @@
+#!name=Force UHDNow Direct
+#!desc=强制 smart.uhdnow.com 及其子域名直连
+#!system=ios,mac
+
+[Rule]
+# 这里的 DOMAIN-SUFFIX 优先级高于托管配置中的规则
+DOMAIN-SUFFIX,smart.uhdnow.com,DIRECT
